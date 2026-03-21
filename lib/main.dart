@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -92,13 +93,13 @@ class MyFirstApp extends StatelessWidget {
           ],
         ),
       ),
-      body: const Center(
-        child: Text(
-          "Welcome!",
-          style: TextStyle(
-            fontSize: 40,
-            fontWeight: FontWeight.bold,
-            color: Colors.blue,
+      body: Center(
+        child: Shimmer.fromColors(
+          baseColor: Colors.blue,
+          highlightColor: Colors.white,
+          child: Text(
+            'Welcome!',
+            style: TextStyle(fontSize: 40.0, fontWeight: FontWeight.bold),
           ),
         ),
       ),
